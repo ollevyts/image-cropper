@@ -66,6 +66,11 @@ const toggleCropMode = () => {
     min-height: 48px;
     border-bottom: 1px solid rgba(48, 54, 61, 0.5);
     padding-bottom: 12px;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
 .custom-chip {
