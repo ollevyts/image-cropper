@@ -19,7 +19,7 @@ export function useImageRestore() {
                 storeRequest.onerror = () => resolve(null);
             });
         } catch (err) {
-            console.error('Не вдалося підключитися до DB:', err);
+            console.error('Error connection to DB:', err);
             return null;
         }
     };

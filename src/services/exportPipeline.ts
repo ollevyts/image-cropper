@@ -15,7 +15,7 @@ export const exportImagePipeline = (
                 const ctx = canvas.getContext('2d');
 
                 if (!ctx) {
-                    throw new Error('Не вдалося ініціалізувати HTML5 Canvas Context 2D');
+                    throw new Error('Failed to initialize HTML5 Canvas Context 2D');
                 }
 
                 let targetWidth = img.naturalWidth;
@@ -60,7 +60,7 @@ export const exportImagePipeline = (
 
                 canvas.toBlob((blob) => {
                     if (!blob) {
-                        throw new Error('Помилка генерації Blob об’єкта');
+                        throw new Error('Blob object generation error');
                     }
                     triggerDownload(blob, `edited_${manifest.filename}`);
 
@@ -81,14 +81,13 @@ export const exportImagePipeline = (
         };
 
         img.onerror = () => {
-            reject(new Error('Не вдалося завантажити вихідне зображення в пайплайн експорту'));
+            reject(
+                new Error('Failed to load the source image into the export pipeline.')
+            );
         };
     });
 };
 
-/**
- * Утилітарна функція для ініціалізації завантаження файлу
- */
 const triggerDownload = (blob: Blob, filename: string) => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
