@@ -37,7 +37,6 @@ watch(() => [store.filters, store.cropData], () => {
                     variant="tonal"
                     color="grey-lighten-1"
                     class="text-none rounded-lg"
-                    prepend-icon="mdi-history"
                     @click="store.resetMetadata"
                 >
                     Clear parameters
@@ -48,7 +47,6 @@ watch(() => [store.filters, store.cropData], () => {
                     block
                     color="primary"
                     class="text-none rounded-lg font-weight-bold action-glow"
-                    prepend-icon="mdi-tray-arrow-down"
                     :loading="isLoading"
                     :disabled="!store.imageSrc"
                     @click="emit('trigger-export')"
