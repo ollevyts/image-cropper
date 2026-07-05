@@ -102,7 +102,7 @@ const confirmLeave = () => {
                 </v-col>
 
                 <v-col cols="12" md="4">
-                    <div style="margin-top: 36px;">
+                    <div style="margin-top: 46px;">
                         <EditorControls :is-loading="isExporting" @trigger-export="showExportModal = true" />
                     </div>
                 </v-col>
